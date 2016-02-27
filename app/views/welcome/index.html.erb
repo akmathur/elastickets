@@ -1,0 +1,27 @@
+<div class="row u-pull-right">
+  <%= link_to "Admin", admin_path %>
+</div>
+
+<div class="row u-full-width">
+  <h4>Tickets</h4>
+  <table>
+    <thead>
+      <tr>
+        <th>Project</th>
+        <th>ticket #</th>
+        <th>Title</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @tickets.each do |ticket| %>
+        <tr>
+          <td><%= ticket.project.name %></td>
+          <td><%= ticket.id %></td>
+          <td><%= ticket.title %></td>
+          <td><%= ticket.description %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
