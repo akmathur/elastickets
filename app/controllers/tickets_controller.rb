@@ -28,7 +28,7 @@ class TicketsController < ApplicationController
   end
   
   def create
-    @ticket = Ticket.new(params[:ticket])
+    @ticket = Ticket.new(ticket_params)
   
     respond_to do |format|
       if @ticket.save
@@ -44,7 +44,7 @@ class TicketsController < ApplicationController
     @ticket = Ticket.find(params[:id])
   
     respond_to do |format|
-      if @ticket.update_attributes(params[:ticket])
+      if @ticket.update_attributes(ticket_params)
         flash[:success] = 'Ticket was successfully updated.'
         format.html { redirect_to tickets_path }
       else
@@ -60,5 +60,11 @@ class TicketsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(tickets_path) }
     end
+  end
+
+  private
+
+  def ticket_params
+    params.require(:ticket).permit(:project_id, :title, :description)
   end
 end
