@@ -1,0 +1,10 @@
+<div class="row">
+  <%= f.label :project %>
+  <%= f.collection_select :project_id, Project.all, :id, :name %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+</div>

@@ -33,7 +33,7 @@ class TicketsController < ApplicationController
     respond_to do |format|
       if @ticket.save
         flash[:success] = 'Ticket was successfully created.'
-        format.html { redirect_to ticket_path(@ticket) }
+        format.html { redirect_to tickets_path }
       else
         format.html { render :action => "new" }
       end

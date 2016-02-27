@@ -1,0 +1,5 @@
+<h4>Tickets - add new</h4>
+<%= form_for @ticket do |f| %>
+  <%= render "form", f: f %>
+  <%= f.submit "Save", class: "button-primary" %> or <%= link_to "cancel", tickets_path %>
+<% end %>
