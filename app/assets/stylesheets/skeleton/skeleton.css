@@ -427,6 +427,10 @@ a.logo {
   text-decoration: none;
 }
 
+.grey {
+  background-color: #eee;
+}
+
 /* Larger than mobile */
 @media (min-width: 400px) {}
 

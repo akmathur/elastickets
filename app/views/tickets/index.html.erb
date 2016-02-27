@@ -7,8 +7,8 @@
   </div>
 </div>
 
-<div class="row u-full-width">  
-  <table>
+<div class="row">
+  <table class="u-full-width">
     <thead>
       <tr>
         <th>Project</th>
@@ -19,7 +19,7 @@
     </thead>
     <tbody>
       <% @tickets.each do |ticket| %>
-        <tr>
+        <tr class="<%= cycle('grey', '') %>">
           <td><%= ticket.project.name %></td>
           <td><%= ticket.id %></td>
           <td><%= link_to ticket.title, ticket_path(ticket) %></td>
