@@ -1,14 +1,27 @@
-<div class="row u-pull-right">
-  <%= link_to "Admin", admin_path %>
+<div class="row">
+  <div class="twelve columns">
+    <p class="u-pull-right">
+      <%= link_to "Settings", admin_path %>
+    </p>
+  </div>
 </div>
 
-<div class="row u-full-width">
-  <h4>Tickets</h4>
+
+<div class="row">
+  <div class="ten columns">
+    <h4>Tickets</h4>
+  </div>
+  <div class="two columns">
+    <%= link_to "New ticket", new_ticket_path, class: "button" %>
+  </div>
+</div>
+
+<div class="row u-full-width">  
   <table>
     <thead>
       <tr>
         <th>Project</th>
-        <th>ticket #</th>
+        <th>Ticket#</th>
         <th>Title</th>
         <th>Description</th>
       </tr>

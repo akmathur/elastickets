@@ -1,6 +1,6 @@
 class TicketsController < ApplicationController
   def index
-    @tickets = Ticket.find :all
+    @tickets = Ticket.all
   
     respond_to do |format|
       format.html # index.html.erb

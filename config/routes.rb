@@ -54,7 +54,7 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-  root 'welcome#index'
+  root 'tickets#index'
   get '/admin' => 'admin#index', as: 'admin'
 
   resources :projects
