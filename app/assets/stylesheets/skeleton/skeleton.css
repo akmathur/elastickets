@@ -400,6 +400,27 @@ on small devices, paste the mobile query code up in the buttons section and styl
 there.
 */
 
+.flash {
+    border: 1px solid #777;
+    font-weight: bold;
+    margin-bottom: 8px;
+    padding: 4px;
+}
+
+.notice.flash {
+  background: #FFF6BF;
+  color:#514721;
+}
+
+.error.flash {
+  background: #FBE3E4;
+  color:#8a1f11;
+}
+
+.success.flash {
+  background: #E6EFC2;
+  color:#264409;
+}
 
 /* Larger than mobile */
 @media (min-width: 400px) {}

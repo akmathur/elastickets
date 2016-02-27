@@ -20,6 +20,13 @@
     </div>
     <hr />
 
+    <!-- flash messages -->
+    <% if flash.present? -%>
+      <% flash.each do |msg_type, msg|%>
+        <div class="flash <%= msg_type %>"><%= msg %></div>
+      <% end %>
+    <% end -%>
+
     <%= yield %>
   </div>
 </body>
