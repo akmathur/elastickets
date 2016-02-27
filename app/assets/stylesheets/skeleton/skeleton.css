@@ -422,6 +422,11 @@ there.
   color:#264409;
 }
 
+a.logo {
+  color: #222;
+  text-decoration: none;
+}
+
 /* Larger than mobile */
 @media (min-width: 400px) {}
 
