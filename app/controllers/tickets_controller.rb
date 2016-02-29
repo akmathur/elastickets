@@ -1,6 +1,6 @@
 class TicketsController < ApplicationController
   def index
-    @tickets = Ticket.all
+    @tickets = Ticket.order("updated_at DESC").all
   
     respond_to do |format|
       format.html # index.html.erb
