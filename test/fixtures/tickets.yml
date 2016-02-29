@@ -1,11 +1,19 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+ticket_1:
+  project: turbo_sheet
+  title: opening the spreadsheet is slow
+  description: opening a spreadsheet with more than 1 sheet, takes several minutes
 
-one:
-  title: MyString
-  description: MyText
-  project_id: 1
+ticket_2:
+  project: power_write
+  title: unformatting does not work
+  description: if I change the font on selected text, then try to undo it back to the original font, it does not work
 
-two:
-  title: MyString
-  description: MyText
-  project_id: 1
+ticket_3:
+  project: shiny_tunes
+  title: sorting the songs by artist does not work
+  description: when I try to qwj qwj sort songs by artist, it does not show my favourite artists at the top
+
+ticket_4:
+  project: turbo_sheet
+  title: how to duplicate a sheet
+  description: ! can't duplicate a sheet. please help.\r\n\r\nThanks a lot."

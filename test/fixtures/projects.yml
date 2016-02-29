@@ -1,9 +1,15 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+turbo_sheet:
+  name: Turbo sheet
+  description: Spreadsheet program to maintain your data
 
-one:
-  name: MyString
-  description: MyText
+power_write:
+  name: PowerWrite
+  description: Text editor for the snappy fingered
 
-two:
-  name: MyString
-  description: MyText
+super_backup:
+  name: Super backup
+  description: Smart backup program
+
+shiny_tunes:
+  name: Shiny tunes
+  description: Play some shoothing music to calm your nerves
