@@ -57,6 +57,8 @@ Rails.application.routes.draw do
   root 'tickets#index'
   get '/admin' => 'admin#index', as: 'admin'
 
-  resources :projects
+  namespace :admin do
+    resources :projects
+  end
   resources :tickets
 end
