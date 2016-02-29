@@ -400,6 +400,17 @@ on small devices, paste the mobile query code up in the buttons section and styl
 there.
 */
 
+body.admin {
+  background: #eee none repeat scroll 0 0;
+}
+
+body.admin .container {
+    background: #fff none repeat scroll 0 0;
+    border: 2px solid #dedede;
+    border-radius: 4px;
+    padding: 4px;
+}
+
 .flash {
     border: 1px solid #777;
     font-weight: bold;
