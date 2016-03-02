@@ -1,0 +1,26 @@
+<div class="row">
+  <%= f.label :target_model, "Model" %>
+  <%= f.select :target_model, Extension.models_list %>
+
+  <%= f.label :position %>
+  <%= f.text_field :position %>
+
+  <%= f.label :label %>
+  <%= f.text_field :label %>
+
+  <%= f.label :attr_name %>
+  <%= f.text_field :attr_name %>
+
+  <%= f.label :attr_type %>
+  <%= f.select :attr_type, Extension::ATTR_TYPES %>
+
+  <%= f.label :values %>
+  <%= f.text_field :values %>
+  <em>Comma separated</em>
+
+  <%= f.label :default %>
+  <%= f.text_field :default %>
+
+  <%= f.label :is_required %>
+  <%= f.check_box :is_required %>
+</div>

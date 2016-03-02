@@ -30,3 +30,20 @@
     </tbody>
   </table>
 </div>
+
+<div class="row">
+  <div class="nine columns">
+    <h4>Tickets extensions</h4>
+  </div>
+  <div class="three columns">
+    <%= link_to "New extension", new_admin_extension_path, class: "button" %>
+  </div>
+</div>
+
+<% Extension.where(target_model: "Ticket").order("position").each do |extension| %>
+  <div class="row">
+    <b><%= extension.position %></b> <%= extension.label %> (<%= extension.attr_type %>)
+    <%= link_to "Edit", edit_admin_extension_path(extension) %>
+    <%= link_to "Delete", admin_extension_path(extension), method: :delete %>
+  </div>
+<% end %>

@@ -59,6 +59,8 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :projects
+    resources :extensions
   end
+
   resources :tickets
 end
