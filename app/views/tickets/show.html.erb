@@ -16,6 +16,15 @@
   <b>Description</b>:<br />
   <%= simple_format(@ticket.description) %>
 </div>
+<br />
+
+<% Extension.where(target_model: "Ticket").order("position").each do |extension| %>
+  <div class="row">
+    <b><%= extension.label %></b>:<br />
+    <%= @ticket.send(extension.attr_name) %>
+  </div>
+  <br />
+<% end %>
 
 <div class="row">
   <%= link_to "Edit", edit_ticket_path(@ticket), class: "button" %>

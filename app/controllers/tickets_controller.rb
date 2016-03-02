@@ -65,6 +65,6 @@ class TicketsController < ApplicationController
   private
 
   def ticket_params
-    params.require(:ticket).permit(:project_id, :title, :description)
+    params.require(:ticket).permit(:project_id, :title, :description, extended_attrs: Extension.permitted_params("Ticket"))
   end
 end

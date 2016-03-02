@@ -7,4 +7,14 @@
 
   <%= f.label :description %>
   <%= f.text_area :description %>
+
+  <% Extension.where(target_model: "Ticket").order("position").each do |extension| %>
+    <% if f.object.errors.keys.map(&:to_s).include?(extension.parameterized_label) %>
+      <%= field_error_proc.call(label_tag(extension.label), f.object) %>
+      <%= field_error_proc.call(extended_field_tag(f, extension), f.object) %>
+    <% else %>
+      <%= label_tag extension.label %>
+      <%= extended_field_tag(f, extension) %>
+    <% end %>
+  <% end %>
 </div>
