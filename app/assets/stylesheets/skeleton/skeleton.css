@@ -433,6 +433,13 @@ body.admin .container {
   color:#264409;
 }
 
+#error_explanation {
+  background-color: #fbe3e4;
+  border-radius: 4px;
+  color: #8a1f11;
+  padding: 4px 8px 2px;
+}
+
 a.logo {
   color: #222;
   text-decoration: none;
