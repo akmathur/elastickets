@@ -1,0 +1,69 @@
+ticket_priority:
+  target_model: Ticket
+  position: 1
+  label: Priority
+  attr_name: priority
+  attr_type: select
+  values: low, normal, high, critical
+  default: normal
+  is_required: true
+
+ticket_reported_by:
+  target_model: Ticket
+  position: 2
+  label: Reported by
+  attr_name: reported_by
+  attr_type: text_field
+  values: 
+  default: 
+  is_required: false
+
+ticket_handled_by:
+  target_model: Ticket
+  position: 0
+  label: Handled by
+  attr_name: tackled_by
+  attr_type: text_field
+  values: 
+  default: 
+  is_required: true
+
+ticket_effects:
+  target_model: Ticket
+  position: 3
+  label: Effects
+  attr_name: effects
+  attr_type: multiselect
+  values: UI, Admin backend, DB, API, mobile app, none
+  default: none
+  is_required: false
+
+ticket_days:
+  target_model: Ticket
+  position: 4
+  label: Days
+  attr_name: days
+  attr_type: check_boxes
+  values: Mon, Tue, Wed, Thu, Fri, Sat, Sun
+  default: Sat
+  is_required: true
+
+ticket_time:
+  target_model: Ticket
+  position: 5
+  label: Time
+  attr_name: time
+  attr_type: radio_buttons
+  values: Morning, Afternoon, Evening, Night
+  default: 
+  is_required: false
+
+ticket_scenario:
+  target_model: Ticket
+  position: 6
+  label: Full scenario
+  attr_name: full_scenario
+  attr_type: text_area
+  values: 
+  default: write full story here...
+  is_required: false
