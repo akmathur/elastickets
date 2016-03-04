@@ -1,28 +1,94 @@
-== README
+== Executive Summary
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a sample application to demonstrate how to create
+user-extendable models in a Ruby on Rails web application.
 
-Things you may want to cover:
+== Motivation
 
-* Ruby version
+Suppose you are developing a Ruby-on-Rails web application in which
+you have a model called *Ticket* with standard fields like title,
+description etc. You plan to deploy that application to multiple
+client sites.
 
-* System dependencies
+However, your clients each have different requirements for what data
+they want to store within the *Ticket* record. One client may want to
+store priority and reported_by while another instead wants to store
+urgency and turnaround time with each ticket record. As a developer,
+you don't want to add a database column to *tickets* table every time
+some client comes up with a new requirement. This application presents
+a flexible and scaleable solution to this problem.
 
-* Configuration
+== Install and Run
 
-* Database creation
+This sample application is built using Rails 4.2 and Ruby
+2.0. However, the technique is pretty generic and should work with
+minimal changes for older versions too.
 
-* Database initialization
+1. download the application from Github and unzip
+2. cd elastickets
+3. rake db:create db:schema:load db:seed
+4. rails server
 
-* How to run the test suite
+The application has two interfaces. An external interface - accessible
+to a wide audience who can view, edit and add +Ticket+
+records. Another admin interface, which should be accessible to few
+privileged users in the client's organization who can define what set
+of data can be stored with +Ticket+ records.
 
-* Services (job queues, cache servers, search engines, etc.)
+http://localhost:3000 is the external user interface. Clicking
+"Settings" on top left takes you to the admin interface
+http://localhost:3000/admin.
 
-* Deployment instructions
+Note that to keep the code simple to understand, authentication logic
+is not added to either external or admin section. In your real
+application you should add authentication and authorize only correct
+users to access either of the sections
+({Device}[https://github.com/plataformatec/devise] works great).
 
-* ...
+== Explanation and guide to reading the code
 
+First you will need to create a model called +Extension+. This model
+defines every new column that a client may want to add to a regular
+model in the project.
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+See +db/schema.rb+ for the table design for extensions and associated
+routes, controller and views. You would probably want to copy over the
++Extension+ model, +extension_utilities.rb+, +extension_validator.rb+,
+route definition and controller verbatim and views files with
+appropriate style changes.
+
+For every model which you want to make extendable, first add a text
+column *extended_attrs* to them. Then, add these following lines to
+the model class:
+
+# class Customer < ActiveRecord::Base
+#   serialize :extended_attrs, Hash
+#   validates_with ExtensionValidator
+#   include ExtensionUtilities
+# end
+
+The controller needs just a small change to allow extended_attrs in
+the params hash. The view and form code to display and edit extended
+columns in Customer and straightforward and are available in
++app/controller+ and +app/views+ respectively.
+
+Also look at tests to get an idea of how extensions can be used.
+
+A word of caution: do not write business logic using extended
+fields. Instead add proper database columns. These extended columns
+should be defined by the client (and not the developers) and used only
+for storing data and displaying them.
+
+== Future plan
+
+This application can be easily extended to support multi-tenant
+databases using an additional scope column in extensions table.
+
+Also, eventually this should be wrapped within a plugin to make it
+easy to use.
+
+== Author
+
+This idea is extracted from application
+{Slotfix}[http://slotfix.in]. The sample application was built by Amit
+K Mathur. Direct your questions and comments to akmathur@gmail.com
