@@ -82,11 +82,11 @@ For every model which you want to make extendable, first add a text
 column *extended_attrs* to them. Then, add these following lines to
 the model class:
 
-class Customer < ActiveRecord::Base
-  serialize :extended_attrs, Hash
-  validates_with ExtensionValidator
-  include ExtensionUtilities
-end
+  class Customer < ActiveRecord::Base
+    serialize :extended_attrs, Hash
+    validates_with ExtensionValidator
+    include ExtensionUtilities
+  end
 
 The controller needs just a small change to allow extended_attrs in
 the params hash. The view and form code to display and edit extended
