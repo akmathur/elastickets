@@ -63,10 +63,8 @@ To add a new extended column to +Ticket+:
 Then try to create a new ticket:
 
 9. Go to http://localhost:3000
-10. Click "NEW TICKET". You should see *Priority* as a field added at
-the end of the form.
-11. Fill the form and save the ticket. Click to open the ticket and edit
-again. Go nuts!
+10. Click "NEW TICKET". You should see *Priority* as a field added at the end of the form.
+11. Fill the form and save the ticket. Click to open the ticket and edit again. Go nuts!
 
 == Explanation and guide to reading the code
 
